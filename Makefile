@@ -24,7 +24,7 @@ RM=/bin/rm
 CFLAGS=-Wall -g -ggdb -DNETBONE -D_FILE_OFFSET_BITS=64 -O2 -lpthread -lz -lrt  -rdynamic -Wno-unused-but-set-variable
 CFLAGS_BIN=$(CFLAGS) -lcmcore
 
-all: lib client debug sendd ids 
+all: init lib client debug sendd ids 
 
 debug:
 	$(CC) $(CFLAGS_BIN) -o $(OUT_D) $(SOURCE)/debug.c $(OUT_C-CLIENT-LIB) 
@@ -40,6 +40,10 @@ sendd:
 	$(CC) $(CFLAGS_BIN) -o $(OUT_SENDD)  $(SOURCE)/sendd.c $(OUT_C-CLIENT-LIB) $(OUT_C-SERVER_LIB)
 ids:
 	$(CC) $(CFLAGS_BIN) -o $(OUT_IDS) -DVERSION='"$(VERSION)"' $(SOURCE)/datad.c $(OUT_C-CLIENT-LIB)  $(OUT_C-SERVER_LIB)
+init:
+	mkdir bin
+	mkdir cfg
+
 cmcore:
 	$(CC) $(CFLAGS) -c -fPIC -o $(OUT_C-CMCORE) $(SOURCE)/cmcore.c
 	$(CC) -shared -Wl,-soname,libcmcore.so.1 -Wl,-init,cm_init -o $(SOURCE)/libcmcore.so.1.0.1 $(OUT_C-CMCORE)
