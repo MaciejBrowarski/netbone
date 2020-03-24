@@ -156,7 +156,7 @@ char agent_name[NAME_SIZE];
 /*
  *    global as to kill it on stop signal
  */
-extern int16_t get_object_pid;
+extern pid_t get_object_pid;
 /*
  * access to share buffor for get_object function
  */

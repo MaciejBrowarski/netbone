@@ -39,7 +39,7 @@ client:
 sendd:
 	$(CC) $(CFLAGS_BIN) -o $(OUT_SENDD)  $(SOURCE)/sendd.c $(OUT_C-CLIENT-LIB) $(OUT_C-SERVER_LIB)
 ids:
-	$(CC) $(CFLAGS_BIN) -o $(OUT_IDS) -DVERSION='"$(VERSION)"' $(SOURCE)/datad.c $(OUT_C-CLIENT-LIB) $(OUT_C-LIB) $(OUT_C-SERVER_LIB)
+	$(CC) $(CFLAGS_BIN) -o $(OUT_IDS) -DVERSION='"$(VERSION)"' $(SOURCE)/datad.c $(OUT_C-CLIENT-LIB)  $(OUT_C-SERVER_LIB)
 cmcore:
 	$(CC) $(CFLAGS) -c -fPIC -o $(OUT_C-CMCORE) $(SOURCE)/cmcore.c
 	$(CC) -shared -Wl,-soname,libcmcore.so.1 -Wl,-init,cm_init -o $(SOURCE)/libcmcore.so.1.0.1 $(OUT_C-CMCORE)
@@ -67,6 +67,5 @@ clean-client:
 	$(RM) $(OUT_C)
 clean-lib:
 	$(RM) $(OUT_C-CLIENT-LIB)
-	$(RM) $(OUT_C-LIB)
 ver:
 	../scripts_admin/netbone.pl version

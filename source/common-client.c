@@ -46,7 +46,7 @@ char backtrace_line[4096];
  */
 uint32_t net_size = BUF;
 
-int16_t get_object_pid = -1;
+pid_t get_object_pid = -1;
 struct comm *checker_sh_meta_data;
 char *checker_sh_data;
 
