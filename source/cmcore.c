@@ -13,8 +13,8 @@
  * function check is IP is allow to be connected for IDS
  */
 
-#define MAX_CHECK 4
-char check_ip[MAX_CHECK][20] = {"32030206", "32040206","32050206"};
+#define MAX_CHECK 5
+char check_ip[MAX_CHECK][20] = {"32030206", "349020203","32040206","32050206"};
 
 
 #define TB 1600000000
