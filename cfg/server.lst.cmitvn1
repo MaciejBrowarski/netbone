@@ -1,0 +1,29 @@
+name=ns1-USER_ENV
+timeout=480
+port=27100
+crc=on
+# ids_mode=on
+# ns2
+ip=10.2.0.4
+# ns3
+ip=10.3.0.4
+
+# debug=on
+# debug=main_loop
+# debug=code_encode
+# debug=get_object
+# debug=sendd_name_version
+
+# debug=checker_buffer
+# debug=send_packet
+# debug=request_put
+# debug=tcp_server
+# debug=xml_parse
+# debug=request_list
+# debug=get_list_meta_data
+
+bpath=/home/USER_ENV/get/backup/data/
+# bpath_load=on
+log_path=/home/USER_ENV/get/log_perm/
+pid_path=/home/USER_ENV/get/pid/
+
